@@ -12,12 +12,13 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:gravity="center"
+
         android:textSize="35dp"
 android:layout_marginTop="10dp"
         android:text="주인님 정보"/>
 
     <LinearLayout
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_gravity="center"
@@ -29,13 +30,13 @@ android:layout_marginTop="10dp"
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="2"
+                android:gravity="center"
                 android:text="이름 : "/>
             <EditText
                 android:layout_width="0dp"
@@ -60,6 +61,7 @@ android:layout_marginTop="10dp"
             <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
                 android:id="@+id/kind_spinner">
             </Spinner>
         </LinearLayout>
@@ -69,18 +71,27 @@ android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:textSize="12sp">
 
             <TextView
                 android:layout_width="0dp"
+                android:gravity="center"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="개월(년) : "/>
-            <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/birth_spinner">
-            </Spinner>
+                android:text="개월 : "/>
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="6"
+                android:id="@+id/profileActivity_month"
+                android:hint="개월"/>
+            <TextView
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="match_parent"
+                android:text="개월"
+                android:layout_weight="1"/>
         </LinearLayout>
         <LinearLayout
             android:layout_marginTop="40dp"
@@ -100,7 +111,7 @@ android:layout_marginTop="10dp"
                android:layout_width="0dp"
                android:layout_height="match_parent"
                android:layout_weight="6"
-
+                android:id="@+id/profileActivity_weight"
                android:hint="소수점 한자리 까지"/>
             <TextView
                 android:layout_width="0dp"
@@ -123,11 +134,13 @@ android:layout_marginTop="10dp"
                 android:layout_weight="1"
                 android:text="성별 : "/>
             <CheckBox
+                android:id="@+id/checkbox_male"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
                 android:text="수컷"/>
             <CheckBox
+                android:id="@+id/checkbox_female"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
@@ -143,5 +156,6 @@ android:layout_marginTop="10dp"
         android:text="등록하기"
         android:layout_marginBottom="30dp"
         android:layout_marginHorizontal="40dp"
+        android:background="#ECA4A6"
         android:id="@+id/profileActivity_register"/>
 </LinearLayout>

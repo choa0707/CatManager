@@ -6,8 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".model.StartActivity"
     android:orientation="vertical"
-    android:layout_marginVertical="30dp"
-    android:gravity="center">
+
+    android:gravity="center"
+    android:background="#ffd9d0">
 
     <ImageView
         android:layout_marginTop="-80dp"
@@ -21,10 +22,11 @@
 
     <Button
         android:id="@+id/catregister"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:background="@drawable/startbutton"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
         android:layout_marginHorizontal="80dp"
-        android:text="주인님 등록하기"
+        android:layout_marginBottom="30dp"
         />
 
 

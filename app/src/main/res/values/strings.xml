@@ -4,4 +4,18 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+
+    <string-array name="kind">
+        <item>고리안 숏헤어</item>
+        <item>터키시앙고라</item>
+        <item>러시안블루</item>
+        <item>샴</item>
+        <item>페르시안</item>
+        <item>스코티시 폴드</item>
+        <item>뱅갈</item>
+        <item>먼치킨</item>
+        <item>스핑크스</item>
+        <item>아비시니안</item>
+    </string-array>
+
 </resources>

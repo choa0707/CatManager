@@ -2,7 +2,8 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_marginBottom="15dp">
 
     <TextView
         android:layout_width="match_parent"
@@ -12,14 +13,12 @@
         android:gravity="center"
         android:layout_marginBottom="20dp"/>
     <GridView
+        android:layout_marginHorizontal="20dp"
         android:id="@+id/gridViewImages"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:numColumns="3"
         android:horizontalSpacing="10dp"
         android:verticalSpacing="10dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp">
-    </GridView>
-
+        android:layout_marginVertical="10dp"/>
 </LinearLayout>
