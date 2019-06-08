@@ -35,6 +35,7 @@ public class CartFragment extends Fragment {
     private List<GridData> list;
     int i;
     String clickname;
+    String clickname_long;
     MyDBHelper myDBHelper;
     SQLiteDatabase sqlDB;
     CartGridAdapter adapter;
@@ -57,6 +58,14 @@ public class CartFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                 clickname = list.get(position).name;
                 show(position);
+            }
+        });
+        gridView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                clickname_long = list.get(position).name;
+                show_long(position);
+                return true;
             }
         });
         return fragmentView;
@@ -95,6 +104,42 @@ public class CartFragment extends Fragment {
             cursor.moveToNext();
         }
         cursor.close();
+    }
+    void show_long(final int pos2)
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+
+        String getProduct = "SELECT fp_id FROM Product WHERE name = '"+clickname+"';";
+        Cursor cursor3 = (Cursor) sqlDB.rawQuery(getProduct, null);
+        cursor3.moveToFirst();
+
+        pos = cursor3.getInt(0);
+
+        builder.setTitle("삭제");
+        builder.setMessage("해당 품목을 삭제하시겠습니까?");
+
+        builder.setPositiveButton("예",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        String cartUpdate = "DELETE FROM Cart WHERE fp_id = "+pos+";";
+                        sqlDB.execSQL(cartUpdate);
+                        Toast.makeText(getContext(), "삭제가 완료 되었습니다." ,Toast.LENGTH_SHORT).show();
+                        fragmentView.destroyDrawingCache();
+                        fragmentView.setVisibility(ListView.INVISIBLE);
+                        fragmentView.setVisibility(ListView.VISIBLE);
+
+                        list.get(pos2).num = 0;
+                        gridView.setAdapter(adapter);
+                        adapter.notifyDataSetChanged();
+                    }
+                });
+        builder.setNegativeButton("아니요",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+        builder.show();
     }
     void show(final int pos2)
     {
